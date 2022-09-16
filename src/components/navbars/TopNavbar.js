@@ -10,7 +10,7 @@ import { IoMdGift, IoMdFlash } from "react-icons/io";
 
 function TopNavbar() {
   return (
-    <Center h={"9vh"} bg={"#081621"} color={"white"}>
+    <Center h={"80px"} bg={"#081621"} color={"white"}>
       {/* {Contsiner Starts} */}
       <Center w={{ xl: "1300px", base: "99%" }}>
         {/* {Logo & SearchBar Starts} */}
@@ -21,7 +21,12 @@ function TopNavbar() {
           <InputGroup w={"580px"}>
             <Input bg={"white"} placeholder={"Search"} />
             <InputRightElement>
-              <IconButton color={"black"} fontSize={"xl"} bg={""} icon={<IoSearchSharp />} />
+              <IconButton
+                color={"black"}
+                fontSize={"xl"}
+                bg={""}
+                icon={<IoSearchSharp />}
+              />
             </InputRightElement>
           </InputGroup>
         </HStack>
@@ -56,7 +61,7 @@ function TopNavbar() {
             </HStack>
           </Link>
 
-          <Link to="/login">
+          <Link to="/account/login">
             <HStack>
               <Text fontSize={"2xl"} color={"tomato"}>
                 <IoPerson />

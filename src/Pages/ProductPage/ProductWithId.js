@@ -1,17 +1,55 @@
-import { Box, Center, HStack, Text, VStack } from "@chakra-ui/layout";
+import { VStack, Box } from "@chakra-ui/layout";
+import { Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
-import { useParams } from "react-router";
-import { IoHomeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router";
+import { Button } from "@chakra-ui/button";
+import { useDataContext } from "../../contexts/DataContext";
+import Breadcrumb from "../Breadcrumb";
 
 function ProductWithId() {
   const params = useParams();
+  const history = useHistory();
+  const { Data } = useDataContext();
+
   return (
-    <VStack bg={"white"} h={"10vh"} fontSize={"sm"} color={"gray"} boxShadow={"sm"} py={"4"}>
-      <HStack w={{ xl: "1300px", base: "99%" }} mx={"auto"}>
-        <IoHomeSharp />
-        <Link to={"/product/" + params.id}>/ {params.id}</Link>
-      </HStack>
+    <VStack>
+      <VStack
+        w={"100%"}
+        bg={"white"}
+        fontSize={"sm"}
+        color={"gray"}
+        boxShadow={"sm"}
+        py={"4"}
+      >
+        <VStack w={{ xl: "1300px", base: "99%" }} mx={"auto"}>
+          {/* ---------------------------------------------- */}
+          <Breadcrumb />
+          {/* ---------------------------------------------- */}
+          <Wrap w={"100%"}>
+            {Data[params.id] &&
+              Data[params.id].map((name, i) => (
+                <WrapItem key={i}>
+                  <Button
+                    minW={"fit-content"}
+                    variant={"outline"}
+                    size="sm"
+                    color={"black"}
+                    borderRadius={"full"}
+                    fontWeight={""}
+                    _hover={{ bg: "#3749BB", color: "white" }}
+                    onClick={() => {
+                      history.replace("/product/" + params.id + "/" + name);
+                    }}
+                  >
+                    {name}
+                  </Button>
+                </WrapItem>
+              ))}
+          </Wrap>
+          {/* ---------------------------------------------- */}
+        </VStack>
+      </VStack>
+      <Box h={"60vh"}></Box>
     </VStack>
   );
 }
