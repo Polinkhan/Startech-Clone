@@ -8,7 +8,12 @@ import HomeDataContextProvider from "./HomeDataContext";
 function HomePage() {
   return (
     <HomeDataContextProvider>
-      <VStack pt={"8"} gap={"8"} w={{ xl: "1300px", base: "99%" }} mx={"auto"}>
+      <VStack
+        pt={"8"}
+        gap={"8"}
+        w={{ xl: "1300px", base: "99%" }}
+        mx={"auto"}
+      >
         <Banner />
         <FeatureCatagory />
       </VStack>

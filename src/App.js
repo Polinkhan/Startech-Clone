@@ -17,15 +17,18 @@ import {
 import { Box } from "@chakra-ui/layout";
 import StickyNavbar from "./components/navbars/StickyNavbar";
 import Footer from "./Pages/Footer";
+import NavbarDataContextProvider from "./components/navbars/NavbarDataContext";
 
 function App() {
   const { isLogin } = useDataContext();
 
   return (
     <Router>
-      <TopNavbar />
-      <StickyNavbar />
-      <Box bg={"#f2f4f8"}>
+      <NavbarDataContextProvider>
+        <TopNavbar />
+        <StickyNavbar />
+      </NavbarDataContextProvider>
+      <Box bg={"#f2f4f8"} overflowX={"hidden"} mt={{ xl: "0px", base: "50px" }}>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/product" component={ProductPage} />

@@ -1,15 +1,19 @@
 import { IconButton } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { Box, HStack, Text, VStack } from "@chakra-ui/layout";
+import { Box, Text, VStack } from "@chakra-ui/layout";
 import { IoSearchSharp } from "react-icons/io5";
 function Banner() {
   return (
     <>
-      <HStack gap={"4"}>
+      <Box
+        display={"flex"}
+        gap={"4"}
+        flexDirection={{ xl: "row", base: "column" }}
+      >
         <Image src="https://www.startech.com.bd/image/cache/catalog/home/banner/star-tech-dhamaka-offer-982x500.jpg" />
-        <VStack gap={"4"}>
-          <VStack bg={"#FFE8A1"} p={"8"}>
+        <VStack gap={"4"} w={"100%"}>
+          <VStack bg={"#FFE8A1"} p={"8"} w={"100%"}>
             <Text fontWeight={"bold"}>Compare Products</Text>
             <Text color={"gray"}>Choose Two Products to Compare</Text>
             <InputGroup>
@@ -18,7 +22,6 @@ function Banner() {
                 <IconButton
                   color={"black"}
                   fontSize={"xl"}
-                  bg={""}
                   icon={<IoSearchSharp />}
                 />
               </InputRightElement>
@@ -45,11 +48,11 @@ function Banner() {
             />
           </VStack>
           <Image
-            maxW={"300px"}
+            // maxW={"300px"}
             src="https://www.startech.com.bd/image/catalog/home/banner/small/nagad-cashback.jpg"
           />
         </VStack>
-      </HStack>
+      </Box>
       <Box
         w={"100%"}
         bg={"white"}

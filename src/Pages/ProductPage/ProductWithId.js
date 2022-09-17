@@ -21,7 +21,11 @@ function ProductWithId() {
         boxShadow={"sm"}
         py={"4"}
       >
-        <VStack w={{ xl: "1300px", base: "99%" }} mx={"auto"}>
+        <VStack
+          w={{ xl: "1300px", base: "99%" }}
+          mx={"auto"}
+          px={{ xl: "0", base: "4" }}
+        >
           {/* ---------------------------------------------- */}
           <Breadcrumb />
           {/* ---------------------------------------------- */}
@@ -32,7 +36,7 @@ function ProductWithId() {
                   <Button
                     minW={"fit-content"}
                     variant={"outline"}
-                    size="sm"
+                    size={{ xl: "sm", base: "xs" }}
                     color={"black"}
                     borderRadius={"full"}
                     fontWeight={""}

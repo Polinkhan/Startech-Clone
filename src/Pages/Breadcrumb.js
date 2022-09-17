@@ -18,7 +18,9 @@ function Breadcrumb() {
   const Links = getLinks(params);
   return (
     <HStack w={"100%"}>
-      <IoHomeSharp />
+      <Link to="/">
+        <IoHomeSharp />
+      </Link>
       {Object.keys(params).map((id, i) => (
         <Link key={i} to={"/product/" + Links[i]}>
           / {params[id]}

@@ -16,7 +16,11 @@ function SubProductwithId() {
         color={"gray"}
         py={"4"}
       >
-        <Box w={{ xl: "1300px", base: "99%" }} mx={"auto"}>
+        <Box
+          w={{ xl: "1300px", base: "99%" }}
+          mx={"auto"}
+          px={{ xl: "0", base: "4" }}
+        >
           <Breadcrumb />
         </Box>
       </Box>

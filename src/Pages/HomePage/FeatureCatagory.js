@@ -20,16 +20,19 @@ function FeatureCatagory() {
             <WrapItem key={i}>
               <Link to={"product/" + catagory.to}>
                 <VStack
-                  h={"135px"}
-                  w={"150px"}
+                  h={{ xl: "135px", md: "120px", base: "110px" }}
+                  w={{ xl: "150px", md: "140px", base: "90px" }}
                   bg={"white"}
                   borderRadius={"2xl"}
                   justifyContent={"center"}
+                  textAlign={"center"}
                   my={"2"}
                   _hover={{ color: "tomato" }}
                 >
-                  <Image src={catagory.src} />
-                  <Text>{catagory.name}</Text>
+                  <Image src={catagory.src} w={{ xl: "auto", base: "30px" }} />
+                  <Text fontSize={{ xl: "md", md: "sm", base: "xs" }}>
+                    {catagory.name}
+                  </Text>
                 </VStack>
               </Link>
             </WrapItem>

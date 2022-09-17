@@ -1,10 +1,4 @@
-import {
-  Box,
-  HStack,
-  StackDivider,
-  Text,
-  VStack,
-} from "@chakra-ui/layout";
+import { Box, HStack, StackDivider, Text, VStack } from "@chakra-ui/layout";
 import React from "react";
 import { IoCall, IoLocationSharp } from "react-icons/io5";
 
@@ -18,7 +12,14 @@ function Footer() {
         w={{ xl: "1300px", base: "99%" }}
         mx={"auto"}
       >
-        <HStack w={"100%"} my={"20"} justifyContent={"space-between"}>
+        <HStack
+          w={"100%"}
+          my={"20"}
+          flexDirection={{ lg: "row", base: "column" }}
+          justifyContent={"space-between"}
+          gap={"10"}
+          fontSize={{ xl: "md", base: "sm" }}
+        >
           <VStack gap={"4"} alignItems={"start"}>
             <Text>SUPPORT</Text>
             <HStack
@@ -68,9 +69,10 @@ function Footer() {
           </VStack>
           <VStack
             h={"100%"}
-            alignItems={"start"}
+            alignItems={{ xl: "start", base: "center" }}
             alignContent={"space-between"}
             gap={"2"}
+            textAlign={{ xl: "", base: "center" }}
           >
             <Text color={"white"}>ABOUT US</Text>
             <Text
@@ -100,7 +102,7 @@ function Footer() {
           </VStack>
           <VStack
             h={"100%"}
-            alignItems={"start"}
+            alignItems={{ xl: "start", base: "center" }}
             alignContent={"space-between"}
             gap={"2"}
           >
@@ -133,7 +135,7 @@ function Footer() {
           </VStack>
           <VStack
             h={"100%"}
-            alignItems={"start"}
+            alignItems={{ xl: "start", base: "center" }}
             alignContent={"space-between"}
             gap={"2"}
           >
@@ -166,7 +168,7 @@ function Footer() {
           </VStack>
           <VStack
             h={"100%"}
-            alignItems={"start"}
+            alignItems={{ xl: "start", base: "center" }}
             alignContent={"space-between"}
             gap={"2"}
           >
